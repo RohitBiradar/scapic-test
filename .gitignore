@@ -1,0 +1,7 @@
+# Dirs and files not to tracked by git
+.DS_STORE
+*.log
+node_modules
+package-lock.json
+bower_components
+src/bower_components

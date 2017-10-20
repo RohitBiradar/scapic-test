@@ -1,0 +1,33 @@
+{
+  "name": "scapic-test",
+  "version": "1.0.0",
+  "description": "Scapic test",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "nodemon server/app.js",
+	"prod" : "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahu5/scapic-test.git"
+  },
+  "author": "Rahul Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahu5/scapic-test/issues"
+  },
+  "homepage": "https://github.com/rahu5/scapic-test#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "pg": "^7.3.0",
+    "sequelize": "^4.15.0",
+    "winston": "^2.4.0",
+    "winston-daily-rotate-file": "^1.7.2"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "nodemon": "^1.12.1"
+  }
+}

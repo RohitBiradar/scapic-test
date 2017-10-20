@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<base href="/"/>
+	<title>Scapic Interview</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+    <link rel="icon" href="assets/images/fav.png" type="image/png" sizes="16x16">
+
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="app/app.css">
+	<link rel="stylesheet" type="text/css" href="app/admin/admin.css">
+
+	<!-- BOWER CSS -->
+
+	<!-- BOWER COMPONENTS -->
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- Script files here -->
+	<script type="text/javascript" src="app/app.js"></script>
+
+	<!--Routes -->
+	<script type="text/javascript" src="app/admin/admin.route.js"></script>
+
+
+	<!-- factories  and services-->
+	<script type="text/javascript" src="components/factories/interceptor.service.js"></script>
+	<script type="text/javascript" src="components/factories/common.service.js"></script>
+	<script type="text/javascript" src="components/factories/auth.service.js"></script>
+	<script type="text/javascript" src="app/admin/admin.service.js"></script>
+
+	<!-- Controllers-->
+	<script type="text/javascript" src="components/controllers/body.controller.js"></script>
+	<script type="text/javascript" src="app/admin/admin.controller.js"></script>
+
+
+
+</head>
+<body class="container" ng-app="scapicInterview" ng-controller="BodyCtrl">
+	<div class="row">
+		<h4>Scapio</h4>
+	</div>
+	<ui-view class="row"></ui-view>
+</body>
+</html>
