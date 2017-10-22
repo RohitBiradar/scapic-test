@@ -1,5 +1,6 @@
 'use strict';
 
+//	Hardcoded Strings
 module.exports = {
 	SPACE : ' ',
 	EMPTY_STRING : '',

@@ -1,4 +1,8 @@
 "use strict";
+/**
+ *  @module 5 Questions MCQ Quiz
+ *  @copyright Rahul Yadav
+ */
 
 let express = require('express');
 let config  = require('./config');
@@ -19,10 +23,10 @@ app.use(function(req, res, next) {
 	next();
 });
 
-// limit for request and response object
+// limit for request and response object, 50mb for now
 app.use(bodyParser.json({limit: '50mb'}));
 
-// express static path
+// express static path - public directory
 app.use(express.static(path.join(__dirname, '../src')));
 
 //  Logging middleware
@@ -36,6 +40,7 @@ fs.readdirSync(__dirname + '/models').forEach(function(file) {
 	if(~file.indexOf('.js')) require(__dirname + '/models/' + file);
 });
 
+//	Delete models and recreate if seeding - ONLY IN DEV
 if(config.SEED){
 	var force = {
 		force : true
@@ -44,7 +49,6 @@ if(config.SEED){
 models.sequelize.sync(force)
 .then(() => {
 	if(config.SEED){
-		console.log("seed");
 		return require('./seed')();
 	}
 	return true;

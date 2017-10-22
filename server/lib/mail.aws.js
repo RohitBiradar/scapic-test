@@ -4,10 +4,19 @@ var aws = require('aws-sdk');
 var keys = require('../config/keys.js');
 var config = require('../config');
 let awsKeys = keys.awsSecrets;
-
+//	Select region
 awsKeys.region = config.ENV === "development" ? keys.awsRegions.dev : keys.awsRegions.main;
 
 let ses = new aws.SES(awsKeys);
+
+/**
+ *  Sends email
+ *  @param {String} fromEmail -  sender
+ *  @param {String} toEmail - reciever
+ *  @param {String} subject -  Subject of email
+ *  @param {String} body -  email content
+ *  @return callBack.
+ */
 module.exports.sendMail = (fromEmail, toEmail, subject, body, callBack) => {
     let email = fromEmail;
 
@@ -49,6 +58,7 @@ module.exports.sendMail = (fromEmail, toEmail, subject, body, callBack) => {
    });
 }
 
+//	Use mailSender for fromEmail while sending email to others
 let sender = "rahul@cronj.com";
 if(config.ENV != "development"){
     sender = "test@waccal.com";

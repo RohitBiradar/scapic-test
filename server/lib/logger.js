@@ -4,6 +4,9 @@ var morgan = require('morgan');
 var config = require('../config');
 var logger = require('./logger.winston.js');
 
+/**
+ *  Logged configuration - log nothing in production mode - write imp error in file
+ */
 module.exports = (app) => {
 	if(config.ENV == "development")
     	app.use(morgan('dev'));

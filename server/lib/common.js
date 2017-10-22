@@ -1,5 +1,12 @@
 'use strict';
+/**
+ *  Common methods usefull in app
+ */
 
+/**
+*  Send response with given status code and payload.
+*  @return false.
+*/
 module.exports.sendResponse = (res, code, data) => {
 	data = data || {};
 	let response = {};
@@ -12,6 +19,11 @@ module.exports.sendResponse = (res, code, data) => {
     res.status(code).json(response);
     return false;
 }
+/**
+ *  Validate email with the given regex
+ *  @param {String} email -  email
+ *  @return Boolean.
+ */
 module.exports.isValidEmail = (email) => {
   /* Rules
   *  @ once

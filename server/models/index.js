@@ -6,6 +6,7 @@ let Sequelize = require("sequelize");
 let config = require('../config');
 let dbConfig = require('../config/database.json')[config.ENV];
 
+//	Sequelize connection with the database provided by dbConfig
 let sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, dbConfig);
 
 let db        = {};
@@ -20,6 +21,7 @@ fs
 		db[model.name] = model;
 	});
 
+// Execute associate of each model to make foreign keys
 Object.keys(db).forEach(function(modelName) {
 	if ("associate" in db[modelName]) {
 		db[modelName].associate(db);

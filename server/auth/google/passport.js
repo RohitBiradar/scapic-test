@@ -19,6 +19,7 @@ module.exports.configGoogle = () => {
 	}, (accessToken, refreshToken, profile, cb) => {
 			try{
 			cb(null, {
+				// Details required for further use(in token)
 				email : profile.emails[0].value,
 				type : "GoogleUser"
 			});}
@@ -27,11 +28,4 @@ module.exports.configGoogle = () => {
 			}
 		}
 	));
-	// passport.serializeUser(function(user, cb) {
-	// 	cb(null, user);
-	// });
-	//
-	// passport.deserializeUser(function(obj, cb) {
-	// 	cb(null, obj);
-	// });
 }

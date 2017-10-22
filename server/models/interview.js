@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey : true,
             autoIncrement : true
         },
+		//	Answwer given by the user
 		answer : {
             type : DataTypes.STRING,
             allowNull : true

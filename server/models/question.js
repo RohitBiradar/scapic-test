@@ -7,14 +7,17 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey : true,
             autoIncrement : true
         },
+		// Question string
         question : {
             type : DataTypes.TEXT,
             allowNull : false
         },
+		// Array of four options
         options : {
 			type : DataTypes.ARRAY(DataTypes.STRING),
             allowNull : false
 		},
+		// Correct answer
 		answer : {
 			type : DataTypes.STRING,
             allowNull : false
