@@ -17,10 +17,16 @@ A 5 question quiz/interview to complete within 30 min - version - 1.0.0
 
 - PostgreSQL service should be running
 
-- **Two files server/config/database.json and server/config/keys.js are required.**
+- **Rename and add secrets to server/config/database.example.json and server/config/keys.example.js files.**
 
 - Run **npm run server** to start server
 - Run **npm run server seed** to seed database in dev mode
 
 ### Production
 - Run **npm run prod** with production environment to start the app 
+
+##### Rename files
+- Rename **server/config/database.example.json** to **server/config/database.json**.
+- Rename **server/config/keys.example.js** to **server/config/keys.js**.
+- **Add required database details, AWS Secrets and Google OAuth keys**
+
