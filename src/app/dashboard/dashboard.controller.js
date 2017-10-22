@@ -9,7 +9,7 @@ angular.module("scapicInterview")
 		var thisRef = this;
 		dashboardService.checkAdminSession()
 		.then(function (data) {
-			console.log(data);
+			thisRef.adminLoggedIn = true;
 		})
 		.catch(function (err) {
 			auth.logOut();

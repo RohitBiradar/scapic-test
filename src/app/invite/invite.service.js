@@ -7,7 +7,6 @@ angular.module("scapicInterview")
 		this.inviteUser = function(email){
 			return commonService.requestApi("post", "/api/user/invite/"+email)
 			.then(function(response){
-				console.log(response.data);
 				return response.data;
 			})
 			.catch(function (err){

@@ -100,7 +100,6 @@ function authenticateUser(email, password, done) {
  *  @return Boolean.
  */
 function validatePassword(password, hashPassword, done) {
-	console.log(password, hashPassword);
 	try{
 		if(bcrypt.compareSync(password, hashPassword))
 			return true;

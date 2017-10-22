@@ -6,7 +6,6 @@ angular.module("scapicInterview")
 	"$state",
 	"ScoresService",
 	function(auth, $state, scoresService) {
-		console.log("ScoresCtrl");
 		var thisRef = this;
 		thisRef.scoreArray = [];
 		scoresService.getScores()

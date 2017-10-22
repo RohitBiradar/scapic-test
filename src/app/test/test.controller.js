@@ -8,7 +8,6 @@ angular.module("scapicInterview")
 	"$timeout",
 	"TestService",
 	function(auth, $state, store, $timeout, testService) {
-		console.log("TestCtrl");
 		var thisRef = this;
 		thisRef.isInterview = false;
 		thisRef.isScore = false;

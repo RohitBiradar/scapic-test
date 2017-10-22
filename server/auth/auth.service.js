@@ -70,7 +70,6 @@ module.exports.isAuthenticated = () => {
  */
 module.exports.isGoogleUser = () => {
 	return (req, res, next) => {
-		console.log("a------------>");
 		if(!req.headers.authorization) {
 			return common.sendResponse(res, 403, {
 				error : strings.error.MISSING_TOKEN
