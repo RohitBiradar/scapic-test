@@ -12,7 +12,8 @@ angular.module("scapicInterview")
 		var thisRef = this;
 		thisRef.isInterview = false;
 		thisRef.isScore = false;
-		thisRef.radio = [];
+		thisRef.radio = [null, null, null, null, null];
+		thisRef.a;
 
 		testService.checkAndStartTest(store.get("uuid"), store.get("GoogleJWT"))
 		.then(function(data) {
@@ -30,6 +31,24 @@ angular.module("scapicInterview")
 		.catch(function(err) {
 			auth.logOut();
 			$state.go("admin");
-		})
+		});
+		thisRef.submitInterview = function(){
+			var answers = [];
+			for(let i=0; i<thisRef.radio.length; i++){
+				if(thisRef.radio[i] != null){
+					let answerObj = {};
+					answerObj.id = thisRef.questionArr[i].id;
+					answerObj.ans = thisRef.radio[i];
+					answers.push(answerObj);
+				}
+			}
+			console.log(answers);
+			testService.submitInterview(answers, store.get("uuid"))
+			.then(function(data) {
+				thisRef.isInterview = false;
+				thisRef.score = data.data.score;
+				thisRef.isScore = data.data.isScore;
+			});
+		}
 	}
 ]);

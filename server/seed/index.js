@@ -9,7 +9,7 @@ module.exports = () => {
 	return Question.bulkCreate(require('./question.js')())
 	.then(() => {
 		return Admin.create({
-			username : 'rahul',
+			username : 'rahulyadav',
 			password  : '$2a$10$J80lQs1tKtuteL/7ZmtjDO79fJ9rzTxLEJYVO.KxsLnCoLuNq4gVu'
 		})
 	})

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rahu5/scapic-test#readme",
   "dependencies": {
+    "aws-sdk": "^2.138.0",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",

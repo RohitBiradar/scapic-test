@@ -11,7 +11,6 @@ module.exports = function(){
 			options : randomOption(list[i].correct_answer, list[i].incorrect_answers)
 		});
 	}
-	console.log("aaaaa", qstArr.length);
 	return qstArr;
 }
 
