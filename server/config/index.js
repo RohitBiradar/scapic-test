@@ -5,7 +5,7 @@ process.env.NODE_ENV = process.env.NODE_ENV == 'production' ? process.env.NODE_E
 
 let config = {
 	"ENV" : process.env.NODE_ENV,
-	"HOST" : process.env.NODE_ENV == 'development' ? 'localhost' : 'abcd.com',
+	"HOST" : process.env.NODE_ENV == 'development' ? 'localhost' : '106.51.70.5',
 	"PORT" : 3000,
 	"PROTOCOL" : 'http',
 	"SEED" : false,
