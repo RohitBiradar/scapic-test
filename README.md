@@ -25,8 +25,9 @@ A 5 question quiz/interview to complete within 30 min - version - 1.0.0
 ### Production
 - Run **npm run prod** with production environment to start the app 
 
-##### Rename files
+#### Rename files
 - Rename **server/config/database.example.json** to **server/config/database.json**.
 - Rename **server/config/keys.example.js** to **server/config/keys.js**.
 - **Add required database details, AWS Secrets and Google OAuth keys**
 
+**Also for google login to work add HOSTNAME/auth/google/callback to redirect URIs in google console**
