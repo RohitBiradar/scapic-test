@@ -1,10 +1,14 @@
 <div class="col-md-12">
-	<h3>Dashboard</h3>
 	<!-- Left nav - Menu -->
-	<ul class="col-md-2">
-		<a href="admin/invite"><li ng-click="dashCtrl.changeView(1)">Invite</li></a>
-		<a href="admin/scores"><li ng-click="dashCtrl.changeView(2)">Scores</li></a>
-	</ul>
+	<div class="col-md-2">
+		<h3>Dashboard</h3>
+		<br>
+		<ul class="list-group">
+			<a href="admin/invite" class="list-group-item" ng-click="dashCtrl.changeView(1)">Invite</a>
+			<a href="admin/scores" class="list-group-item" ng-click="dashCtrl.changeView(2)">Scores</a>
+			<a href="admin/scores" class="list-group-item" ng-click="dashCtrl.logOut()">Sign Out</a>
+		</ul>
+	</div>
 	<!-- Admin main view -->
 	<ui-view class="col-md-10"></ui-view>
 </div>

@@ -6,7 +6,6 @@ angular.module("scapicInterview")
 	"$state",
 	"DashboardService",
 	function(auth, $state, dashboardService) {
-		console.log("DashboardCtrl");
 		var thisRef = this;
 		dashboardService.checkAdminSession()
 		.then(function (data) {
@@ -19,13 +18,13 @@ angular.module("scapicInterview")
 
 		thisRef.changeView = function(navIndex){
 			if(navIndex === 1){
-				console.log("Invite");
-				// $state.go('dashboard.invite');
 			}
 			if(navIndex === 2){
-				console.log("Scores");
-				// $state.go('dashboard.scores');
 			}
+		}
+		thisRef.logOut = function(){
+			auth.logOut();
+			$state.go('admin');
 		}
 	}
 ]);

@@ -6,7 +6,7 @@
 	<title>Scapic Interview</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
     <link rel="icon" href="assets/images/fav.png" type="image/png" sizes="16x16">
-
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<!-- stylesheets -->
 	<link rel="stylesheet" type="text/css" href="app/app.css">
@@ -59,10 +59,12 @@
 	<script type="text/javascript" src="app/test/test.controller.js"></script>
 
 </head>
-<body class="container" ng-app="scapicInterview" ng-controller="BodyCtrl">
-	<div class="row">
-		<h4>Scapio</h4>
+<body ng-app="scapicInterview" ng-controller="BodyCtrl">
+	<div class="container" id="main-block">
+		<div class="row">
+			<h2>Welcome</h2>
+		</div>
+		<ui-view class="row"></ui-view>
 	</div>
-	<ui-view class="row"></ui-view>
 </body>
 </html>

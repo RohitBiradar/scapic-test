@@ -1,9 +1,12 @@
 <div class="row">
 	<h3>Scores</h3>
-	<div ng-repeat="(index, score) in scoresCtrl.scoreArray">
-		<span class="col-md-1">{{index+1}}</span>
-		<span class="col-md-3">{{score.email}}</span>
-		<span class="col-md-3">Correct: {{score.score.correct}} | Wrong: {{score.score.incorrect}}</span>
-		<a class="col-md-5" ng-href="{{score.url}}">{{score.url}}</a>
+	<br>
+	<div class="list-group">
+		<div ng-repeat="(index, score) in scoresCtrl.scoreArray" class="list-group-item col-md-12">
+			<span class="col-md-1">{{index+1}}</span>
+			<span class="col-md-3">{{score.email}}</span>
+			<span class="col-md-3">Correct: {{score.score.correct}} | Wrong: {{score.score.incorrect}}</span>
+			<a class="col-md-5" ng-href="{{score.url}}">{{score.url}}</a>
+		</div>
 	</div>
 </div>

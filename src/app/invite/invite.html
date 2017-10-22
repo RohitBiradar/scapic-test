@@ -1,6 +1,7 @@
 <div class="row">
-	<h3>Invite</h3>
-	<div class="col-md-12">
+	<div class="col-md-offset-2 col-md-6">
+		<h3>Invite</h3>
+		<br>
 		<form class="form-horizontal" ng-submit = "inviteCtrl.inviteUser()">
 			<div class="form-group">
 				<div class="col-md-10">
@@ -8,11 +9,11 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-md-2">
-					<button type="submit" class="btn btn-default">Invite</button>
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-info">Invite</button>
+					<span ng-bind="inviteCtrl.inviteMessage" ng-if="inviteCtrl.isMessageShow"></span>
 				</div>
 			</div>
 		</form>
 	</div>
-	<span class="col-md-12" ng-bind="inviteCtrl.inviteMessage" ng-if="inviteCtrl.isMessageShow"></span>
 </div>

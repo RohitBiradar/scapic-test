@@ -11,15 +11,19 @@ angular.module("scapicInterview")
 		if(auth.getToken()){
 			$state.go('dashboard');
 		}
-
+		thisRef.message = "";
+		thisRef.isMessageShow = false;
 		thisRef.loginAdmin = function(){
+			thisRef.isMessageShow = false;
 			adminService.loginAdmin(thisRef.email, thisRef.password)
 			.then(function(data) {
 				auth.setToken(data.token);
 				$state.go('dashboard');
 			})
 			.catch(function (err) {
-				console.log(err);
+				thisRef.message = err.data.error;
+				thisRef.isMessageShow = true;
+
 			});
 		}
 	}

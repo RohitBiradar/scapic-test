@@ -1,33 +1,43 @@
 <div class="col-md-12">
 	<div ng-if="testCtrl.isInterview">
-		<h3>Test</h3>
+		<h3 class="txt-center">Test</h3>
 		<div ng-repeat="(index, Qst) in testCtrl.questionArr">
-			<span class="col-md-12" class="qst-txt">
+			<span class="col-md-12 qst-txt">
 				<strong>Q: </strong> <span> {{Qst.question}} </span>
 			</span>
-			<form>
-				<label class="ans-txt">
+			<form class="radio-form">
+				<label class="ans-txt col-md-6">
 					<input type="radio" ng-model="testCtrl.radio[index]" value="{{Qst.options[0]}}">
 					{{Qst.options[0]}}
 				</label>
-				<label class="ans-txt">
+				<label class="ans-txt col-md-6">
 					<input type="radio" ng-model="testCtrl.radio[index]" value="{{Qst.options[1]}}">
 					{{Qst.options[1]}}
 				</label>
-				<label class="ans-txt">
+				<br>
+				<label class="ans-txt col-md-6">
 					<input type="radio" ng-model="testCtrl.radio[index]" value="{{Qst.options[2]}}">
 					{{Qst.options[2]}}
 				</label>
-				<label class="ans-txt">
+				<label class="ans-txt col-md-6">
 					<input type="radio" ng-model="testCtrl.radio[index]" value="{{Qst.options[3]}}">
 					{{Qst.options[3]}}
 				</label>
 			</form>
+			<br><br>
 		</div>
-		<button type="button" name="button" class="scap-but" ng-click="testCtrl.submitInterview()">Submit</button>
+		<br>
+		<div class="col-md-12">
+			<button type="button" name="button" class="btn btn-info" ng-click="testCtrl.submitInterview()">Submit</button>
+		</div>
 	</div>
-	<div ng-if="testCtrl.isScore">
+	<div ng-if="testCtrl.isScore" class="col-md-12 txt-center">
 		<h2>Score</h2>
 		Correct: <strong>{{testCtrl.score.correct}}</strong> | Incorrect: <strong>{{testCtrl.score.incorrect}}</strong>
+	</div>
+	<br>
+	<div class="col-md-12 text-center">
+		<br>
+		<button type="button" name="button" class="btn btn-success" ng-click="testCtrl.logOut()">Sign Out</button>
 	</div>
 </div>

@@ -1,0 +1,29 @@
+body{
+	font-family: 'Ubuntu', sans-serif;
+	background: #e9eae2;
+}
+#main-block{
+	font-family: 'Ubuntu', sans-serif;
+	background: #fff;
+	min-height: 100vh;
+}
+h2{
+	text-align: center;
+	font-weight: bold;
+}
+.btn{
+	border: none;
+	border-radius: 0px;
+}
+.err-msg{
+	color: red;
+}
+.form-control{
+	border-radius: 0px;
+}
+a:hover{
+	cursor: pointer;
+}
+.txt-center{
+	text-align: center !important;
+}

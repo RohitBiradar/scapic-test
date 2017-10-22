@@ -11,6 +11,12 @@ let	Admin = db.admin;
 let	bcrypt = require('bcrypt');
 
 module.exports.verifyAdminLogin = (req, res) => {
+	if(!(req.body.email && req.body.password)){
+		return common.sendResponse(res, 400, {
+			status : false,
+			error : strings.error.MISSING_FIELDS
+		});
+	}
 	passport.use(new localStrategy({
 		usernameField: 'email',
 		passwordField: 'password'
