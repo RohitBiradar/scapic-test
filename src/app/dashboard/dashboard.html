@@ -1,0 +1,10 @@
+<div class="col-md-12">
+	<h3>Dashboard</h3>
+	<!-- Left nav - Menu -->
+	<ul class="col-md-2">
+		<a href="admin/invite"><li ng-click="dashCtrl.changeView(1)">Invite</li></a>
+		<a href="admin/scores"><li ng-click="dashCtrl.changeView(2)">Scores</li></a>
+	</ul>
+	<!-- Admin main view -->
+	<ui-view class="col-md-10"></ui-view>
+</div>

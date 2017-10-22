@@ -4,8 +4,8 @@
   "description": "Scapic test",
   "main": "index.js",
   "scripts": {
-    "dev" : "nodemon server/app.js",
-	"prod" : "node server/app.js"
+    "dev": "nodemon server/app.js",
+    "prod": "node server/app.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,18 @@
   },
   "homepage": "https://github.com/rahu5/scapic-test#readme",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
     "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0",
     "pg": "^7.3.0",
     "sequelize": "^4.15.0",
+    "uuid": "^3.1.0",
     "winston": "^2.4.0",
     "winston-daily-rotate-file": "^1.7.2"
   },

@@ -1,0 +1,33 @@
+<div class="col-md-12">
+	<h2>Test</h2>
+	<div ng-if="testCtrl.isInterview">
+		<h3>Quiz</h3>
+		<div ng-repeat="(index, Qst) in testCtrl.questionArr">
+			<span class="col-md-12">
+				<strong>Q: </strong>{{Qst.question}}
+			</span>
+			<form>
+				<label>
+					<input type="radio" value="{{}}">
+					{{Qst.options[0]}}
+				</label>
+				<label>
+					<input type="radio" >
+					{{Qst.options[1]}}
+				</label>
+				<label>
+					<input type="radio" >
+					{{Qst.options[2]}}
+				</label>
+				<label>
+					<input type="radio" >
+					{{Qst.options[3]}}
+				</label>
+			</form>
+		</div>
+		<button type="button" name="button" ng-click="testCtrl.submitInterview()">Submit</button>
+	</div>
+	<div ng-if="testCtrl.isScore">
+
+	</div>
+</div>

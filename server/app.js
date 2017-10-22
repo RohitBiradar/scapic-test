@@ -12,7 +12,7 @@ const app   = express();
 
 //	Allow CORS
 app.use(function(req, res, next) {
-	res.header("Access-Control-Allow-Origin", req.headers.origin);
+	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Credentials", true);
 	res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS")
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
@@ -42,6 +42,13 @@ if(config.SEED){
 	};
 }
 models.sequelize.sync(force)
+.then(() => {
+	if(config.SEED){
+		console.log("seed");
+		return require('./seed')();
+	}
+	return true;
+})
 .then(() => {
 	let http = require('http').Server(app);
 	http.listen(config.PORT);

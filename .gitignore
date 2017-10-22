@@ -5,3 +5,5 @@ node_modules
 package-lock.json
 bower_components
 src/bower_components
+server/config/database.json
+server/config/keys.js

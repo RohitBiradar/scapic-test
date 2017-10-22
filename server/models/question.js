@@ -37,12 +37,5 @@ module.exports = (sequelize, DataTypes) => {
 		});
 	}
 
-	Question.get5Randoms = () => {
-		return Question.findAll({
-			limit : 5,
-			order : 'random()'
-		});
-	}
-
     return Question;
 }

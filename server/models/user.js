@@ -18,36 +18,45 @@ module.exports = (sequelize, DataTypes) => {
         },
 		hasStarted : {
 			type : DataTypes.BOOLEAN,
-            allowNull : false
+            defaultValue : false
+		},
+		startedAt : {
+			type : DataTypes.DATE,
+			allowNull : true
 		},
 		hasSubmitted : {
 			type : DataTypes.BOOLEAN,
-            allowNull : false
+            defaultValue : false
+		},
+		submittedAt : {
+			type : DataTypes.DATE,
+			allowNull : true
 		}
-    },{
-        classMethods : {
-            isCorrectAnswer(id, ans) {
-				return Question.findOne({
-					where : {
-						id
-					}
-				})
-				.then(qst => {
-					if(qst){
-						if(qst.answer.toLowerCase() === ans.toLowerCase())
-							return true;
-						return false;
-					}
-					return false;
-				})
-            },
-			get5Randoms() {
-				return Question.findAll({
-					limit : 5,
-					order : 'random()'
-				})
+    });
+
+	User.invite = function(email, token) {
+		return User.create({
+			email,
+			token
+		});
+	}
+	User.getUser = function(token, email) {
+		return User.findOne({
+			where : {
+				token,
+				email
 			}
-		}
-	});
+		});
+	}
+	User.setStarted = function(userId) {
+		return User.update({
+			hasStarted : true,
+			startedAt : new Date()
+		},{
+			where : {
+				id : userId
+			}
+		});
+	}
     return User;
 }

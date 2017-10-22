@@ -8,7 +8,8 @@ let config = {
 	"HOST" : process.env.NODE_ENV == 'development' ? 'localhost' : 'abcd.com',
 	"PORT" : 4000,
 	"PROTOCOL" : 'http',
-	"SEED" : false
+	"SEED" : false,
+	"JWT" : 'secret5$%by&8rahul'
 }
 
 config.SERVER = config.PROTOCOL + '://' + config.HOST + ':' + config.PORT;

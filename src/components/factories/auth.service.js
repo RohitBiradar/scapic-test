@@ -18,7 +18,7 @@ angular.module("scapicInterview")
 		factory.logOut = function() {
 			store.remove("token");
 		}
-		
+
 		return factory;
 	}
 ])
